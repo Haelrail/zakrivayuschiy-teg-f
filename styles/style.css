@@ -185,32 +185,6 @@
   padding: 25px;
 }
 
-.card__icon-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: outline 0.3s ease;
-  padding: 0;
-  outline: 2px solid transparent;
-}
-
-.card__icon-button:focus {
-  outline: none;
-}
-
-.card__icon-button:focus-visible {
-  outline: 2px solid var(--accent-color);
-}
-
-.like-icon {
-
-}
-
-
-
 .card__like-button {
   border: 2px solid var(--accent-color);
   background-color: transparent;
