@@ -15,7 +15,7 @@
 */
 
 .page {
-  /* min-inline-size: 320px; */
+  min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght";
   /* background-color: var(--background-color); */
@@ -40,7 +40,7 @@
 }
 
 .header__title {
-  font-size: 65px;
+  font-size: clamp(3.0625rem, 2.625rem + 1.5vw, 4.0625rem);
   font-style: normal;
   line-height: normal;
   text-transform: uppercase;
@@ -48,7 +48,7 @@
 }
 
 .header__subtitle {
-  font-size: 23px;
+  font-size: clamp(0.875rem, 0.75rem + 0.8vw, 1.4375rem);
   font-style: normal;
   line-height: normal;
   text-transform: uppercase;
@@ -119,6 +119,7 @@
   flex-direction: column;
   align-items: center;
   gap: 52px;
+  inline-size: clamp(375px, 70%, 696px);
 }
 
 .card {
@@ -270,8 +271,8 @@
   /* inline-size: 335px; */
   inline-size: clamp(375px, 70%, 696px);
   block-size: 51px;
-  /* display: flex;
-  gap: 8px; */
+  display: flex;
+  gap: 8px;
   position: relative;
   overflow: hidden;
   justify-content: center;
@@ -354,9 +355,6 @@ dialog::backdrop {
   background-color: var(--background-color);
 }
 
-/* fix right margin between 375 and 470px and less then 375px inline-size*/
-
-
 @media (width <= 375px) {
   
   .header__title {
@@ -373,17 +371,26 @@ dialog::backdrop {
 
   .card {
     max-inline-size: 375px;
-   }
+  }
 
-   .save-button-container {
+  .card__title {
+    padding: 5px 10px;
+  }
 
-   }
+  .card__image-watermark {
+    inset-block-start: 23px;
+    inset-inline-end: 11px;
+  }
 
-   .save-button {
+  .save-button-container {
+
+  }
+
+  .save-button {
     flex-direction: column;
     inline-size: auto;
     block-size: 80px;
     align-items: center;
     padding: 15px;
-   }
+  }
 }
