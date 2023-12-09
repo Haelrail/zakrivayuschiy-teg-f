@@ -17,6 +17,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  inline-size: 100vw;
   font-variation-settings: "wght";
   /* background-color: var(--background-color); */
   color: var(--accent-color);
@@ -34,7 +35,7 @@
   outline: 2px solid var(--accent-color);
   margin-top: 102px;
   align-items: center;
-  inline-size: clamp(375px, 70%, 696px);
+  inline-size: clamp(320px, 70%, 696px);
   block-size: 364px;
   background-color: var(--background-color);
 }
@@ -119,11 +120,11 @@
   flex-direction: column;
   align-items: center;
   gap: 52px;
-  inline-size: clamp(375px, 70%, 696px);
+  inline-size: clamp(320px, 70%, 696px);
 }
 
 .card {
-  inline-size: clamp(375px, 70% 696px);
+  inline-size: clamp(320px, 70% 696px);
   border: 2px solid var(--accent-color);
   max-inline-size: 696px;
   background-color: var(--background-color);
@@ -164,6 +165,38 @@
 .card__image {
   object-fit: cover;
   inline-size: 100%;
+}
+
+.filter__saturate {
+  filter: saturate(200%);
+}
+
+.filter__grayscale {
+  filter: grayscale(0.7);
+}
+
+.filter__blur {
+  filter: blur(0.5rem);
+}
+
+.filter__sepia {
+  filter: sepia(35%);
+}
+
+.filter__invert {
+  filter: invert(0.3);
+}
+
+.filter__brihtness {
+  filter: brightness(1.5);
+}
+
+.filter__hue-rotate {
+  filter: hue-rotate(45deg);
+}
+
+.multiplied__filter {
+  filter: contrast(175%) opacity(0.5) sepia(80%);
 }
 
 .card__text-block {
@@ -269,7 +302,7 @@
 .save-button {
   background-color: var(--background-color);
   /* inline-size: 335px; */
-  inline-size: clamp(375px, 70%, 696px);
+  inline-size: clamp(320px, 70%, 696px);
   block-size: 51px;
   display: flex;
   gap: 8px;
@@ -392,5 +425,10 @@ dialog::backdrop {
     block-size: 80px;
     align-items: center;
     padding: 15px;
+  }
+
+  .save-button__image {
+    inline-size: 28px;
+    block-size: 28px;
   }
 }
