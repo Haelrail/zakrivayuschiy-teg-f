@@ -15,45 +15,44 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-  inline-size: 100vw;
-  font-variation-settings: "wght";
-  /* background-color: var(--background-color); */
-  color: var(--accent-color);
-  background: var(--background-image) no-repeat center / cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 104px;
+  color: var(--accent-color);
+  background: var(--background-image) no-repeat center / cover;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  inline-size: 100vw;
+  font-variation-settings: "wght";
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  font-family: 'PressStart2P';
-  outline: 2px solid var(--accent-color);
-  margin-top: 102px;
   align-items: center;
+  margin-top: 102px;
+  outline: 2px solid var(--accent-color);
+  font-family: 'PressStart2P';
+  background-color: var(--background-color);
   inline-size: clamp(320px, 70%, 696px);
   block-size: 364px;
-  background-color: var(--background-color);
 }
 
 .header__title {
+  margin-top: 136px;
   font-size: clamp(3.0625rem, 2.625rem + 1.5vw, 4.0625rem);
   font-style: normal;
   line-height: normal;
   text-transform: uppercase;
-  margin-top: 136px;
 }
 
 .header__subtitle {
+  margin-top: 20px;
   font-size: clamp(0.875rem, 0.75rem + 0.8vw, 1.4375rem);
   font-style: normal;
   line-height: normal;
   text-transform: uppercase;
-  margin-top: 20px;
 }
 
 .theme-menu__list {
@@ -70,19 +69,19 @@
 }
 
 .theme-menu__button {
-  background-color: transparent;
+  display: grid;
   border: none;
   text-transform: uppercase;
+  background-color: transparent;
   cursor: pointer;
-  display: grid;
 }
 
 .theme-menu__button::after {
   content: '';
+  background-color: var(--accent-color);
   inline-size: 100%;
   block-size: 2px;
   scale: 0;
-  background-color: var(--accent-color);
 }
 
 .theme-menu__button:disabled {
@@ -99,8 +98,8 @@
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  cursor: pointer;
   transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .theme-menu__button:focus {
@@ -110,9 +109,9 @@
 
 .theme-menu__button:focus-visible::after {
   opacity: 0.6;
-  scale: 1;
   transition: scale 0.3s ease;
   transform-origin: 0%;
+  scale: 1;
 }
 
 .main {
@@ -124,13 +123,12 @@
 }
 
 .card {
-  inline-size: clamp(320px, 70% 696px);
-  border: 2px solid var(--accent-color);
-  max-inline-size: 696px;
-  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
-  /* position: relative; */
+  border: 2px solid var(--accent-color);
+  background-color: var(--background-color);
+  inline-size: clamp(320px, 70% 696px);
+  max-inline-size: 696px;
 }
 
 .card__title {
@@ -143,23 +141,23 @@
 
 .card__image-watermark {
   position: absolute;
-  font-family: var(--accent-font);
+  z-index: 1;
+  opacity: 0.5;
   color: var(--accent-color);
+  font-family: var(--accent-font);
+  font-weight: 400;
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
-  z-index: 1;
-  inset-block-start: 25px;
-  inset-inline-end: 25px;
-  mix-blend-mode: hard-light;
-  opacity: 0.5;
   text-shadow: 
     1px 1px var(--background-color), 
     -1px -1px var(--background-color), 
     1px -1px var(--background-color), 
     -1px 1px var(--background-color);
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+  mix-blend-mode: hard-light;
 }
 
 .card__image {
@@ -205,161 +203,114 @@
   gap: 27px;
   padding: 25px;
   font-family: 'Inter';
+  font-weight: 400;
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
   line-height: 21px;
 }
 
 .card__button {
   display: flex;
-  align-self: end;
   align-items: center;
   gap: 3px;
+  align-self: end;
   padding: 25px;
 }
 
 .card__like-button {
-  border: 2px solid var(--accent-color);
-  background-color: transparent;
-  inline-size: 130px;
-  block-size: 40px;
   position: relative;
-  cursor: pointer;
   display: flex;
-  overflow: hidden;
   justify-content: center;
   align-items: center;
+  border: 2px solid var(--accent-color);
+  overflow: hidden;
+  background-color: transparent;
+  cursor: pointer;
+  inline-size: 130px;
+  block-size: 40px;
 }
 
 .card__like-button:focus {
-  outline: none;
   box-shadow: 2px 2px var(--accent-color);
+  outline: none;
   transition: box-shadow 0.3s ease;
 }
 
 .button::before {
   content: '';
   position: absolute;
-  background-color: var(--accent-color);
-  inline-size: 100%;
-  block-size: 100%;
   top: 0;
   left: -100%;
-  transition: left 0.5s ease-in-out;
   z-index: 1;
-  /* transform-origin: 0%; */
-}
-
-.button:hover::before {
-  left: 0;
-  /* transform-origin: 0%; */
-}
-
-/* .button::before {
-  content: '';
-  position: absolute;
   background-color: var(--accent-color);
+  transition: left 0.5s ease-in-out;
   inline-size: 100%;
   block-size: 100%;
-  z-index: 1;
-  transition: scale 0.5s ease-in-out;
-  top: 0;
+}
+
+.button:hover::before {
   left: 0;
-  scale: 0;
-  transform-origin: 0%;
 }
-
-.button:hover::before {
-  scale: 1;
-  transition: scale 0.5s ease-in-out;
-  transform-origin: 0%;
-} */
-
-/* .button::before {
-  content: '';
-  transform-origin: 0;
-}
-
-.button:hover::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: var(--accent-color);
-  transform: scaleX(0);
-  transition: transform 0.5s ease-in-out;
-} */
 
 .save-button-container {
-  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* inline-size: clamp(335px, 70%, 696px); */
   margin-bottom: 105px;
+  background-color: transparent;
 }
 
 .save-button {
-  background-color: var(--background-color);
-  /* inline-size: 335px; */
-  inline-size: clamp(320px, 70%, 696px);
-  block-size: 51px;
-  display: flex;
-  gap: 8px;
   position: relative;
-  overflow: hidden;
+  display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  gap: 8px;
   border: 2px solid var(--accent-color);
+  overflow: hidden;
+  background-color: var(--background-color);
+  cursor: pointer;
+  inline-size: clamp(320px, 70%, 696px);
+  block-size: 51px;
 }
 
 .save-button__image {
+  fill: var(--accent-color);
   inline-size: 21px;
   block-size: 21px;
-  fill: var(--accent-color);
 }
 
 .button__text {
   position: relative;
+  z-index: 2;
   font-family: var(--accent-font);
+  font-weight: 400;
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
   line-height: 90%;
-  /* align-self: center;
-  justify-self: center; */
-  mix-blend-mode: difference;
   transition: color 0.5s ease-in-out;
-  z-index: 2;
+  mix-blend-mode: difference;
 }
 
 dialog::backdrop {
-  background-color: #000;
   opacity: 0.75;
+  background-color: #000;
 }
 
 .save-modal-window {
-  /* display: none; */
-  inline-size: 357px;
-  background-color: var(--background-color);
-  color: var(--accent-color);
-  outline: 2px solid var(--accent-color);
-  text-transform: uppercase;
   padding: 31.5px;
-  /* gap: 30px; */
-}
-
-.save-modal-window[opened] {
-  /* display: flex;
-  gap: 30px; */
+  outline: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  text-transform: uppercase;
+  background-color: var(--background-color);
+  inline-size: 357px;
 }
 
 .modal-container__content {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 20px;
 }
 
@@ -369,23 +320,23 @@ dialog::backdrop {
 }
 
 .modal-container__content-text {
-  font-family: var(--accent-font);
   color: var(--accent-color);
+  font-family: var(--accent-font);
+  font-weight: 400;
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
   line-height: 150%;
   text-transform: uppercase;
 }
 
 .modal-container__button {
-  inline-size: 100%;
-  padding: 9px 0;
-  margin-top: 30px;
   position: relative;
   z-index: 2;
+  margin-top: 30px;
+  padding: 9px 0;
   overflow: hidden;
   background-color: var(--background-color);
+  inline-size: 100%;
 }
 
 @media (width <= 375px) {
@@ -415,16 +366,12 @@ dialog::backdrop {
     inset-inline-end: 11px;
   }
 
-  .save-button-container {
-
-  }
-
   .save-button {
     flex-direction: column;
-    inline-size: auto;
-    block-size: 80px;
     align-items: center;
     padding: 15px;
+    inline-size: auto;
+    block-size: 80px;
   }
 
   .save-button__image {
