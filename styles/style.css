@@ -149,7 +149,6 @@
   font-size: 14px;
   font-style: normal;
   line-height: normal;
-  text-transform: uppercase;
   text-shadow: 
     1px 1px var(--background-color), 
     -1px -1px var(--background-color), 
@@ -158,6 +157,10 @@
   inset-block-start: 25px;
   inset-inline-end: 25px;
   mix-blend-mode: hard-light;
+}
+
+.watermark-uppercase {
+  text-transform: uppercase;
 }
 
 .card__image {
@@ -377,5 +380,15 @@ dialog::backdrop {
   .save-button__image {
     inline-size: 28px;
     block-size: 28px;
+  }
+}
+
+@supports (
+  (text-stroke: 1px var(--background-color)) or 
+  (-webkit-text-stroke: 1px var(--background-color))
+) {
+  .card__image-watermark {
+    -webkit-text-stroke: 1px var(--background-color);
+    text-stroke: 1px var(--background-color);
   }
 }
