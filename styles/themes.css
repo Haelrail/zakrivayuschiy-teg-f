@@ -42,6 +42,14 @@
 
 .theme-light .save-button__image {
   fill: var(--background-color);
+  color: var(--background-color);
+  background-color: var(--accent-color);
+}
+
+.theme-light .save-button__image-modal {
+  fill: var(--background-color);
+  color: var(--background-color);
+  background-color: var(--accent-color);
 }
 
 :root.theme-dark {
@@ -72,9 +80,29 @@
     background-color: var(--background-color);
   }
 
+  .theme-dark .save-button__image {
+    color: var(--accent-color);
+    background-color: var(--background-color);
+  }
+
+  .theme-dark .save-button__image-modal {
+    color: var(--accent-color);
+    background-color: var(--background-color);
+  }
+
 }
 
 .theme-dark .button__text {
+  color: var(--accent-color);
+  background-color: var(--background-color);
+}
+
+.theme-dark .save-button__image-modal {
+  color: var(--accent-color);
+  background-color: var(--background-color);
+}
+
+.theme-dark .save-button__image {
   color: var(--accent-color);
   background-color: var(--background-color);
 }
