@@ -133,7 +133,6 @@
   flex-direction: column;
   border: 2px solid var(--accent-color);
   background-color: var(--background-color);
-  inline-size: clamp(320px, 70% 696px);
   max-inline-size: 696px;
 }
 
@@ -144,13 +143,13 @@
   font-variation-settings: "whgt" var(--header-font-weight, 700);
 }
 
-.card__image-block {
+.card__illustration {
   position: relative;
   border-top: 2px solid var(--accent-color);
   border-bottom: 2px solid var(--accent-color);
 }
 
-.card__image-watermark {
+.image_watermark {
   position: absolute;
   z-index: 1;
   opacity: 0.5;
@@ -166,50 +165,50 @@
   mix-blend-mode: hard-light;
 }
 
-.watermark-uppercase {
+.image_watermark_uppercase {
   text-transform: uppercase;
 }
 
-.card__image {
+.card__illustration-image {
   display: block;
   object-fit: cover;
   inline-size: 100%;
   block-size: 100%;
 }
 
-.filter__saturate {
+.image_filter_saturate {
   filter: saturate(200%);
 }
 
-.filter__grayscale {
+.image_filter_grayscale {
   filter: grayscale(0.7);
 }
 
-.filter__blur {
+.image_filter_blur {
   filter: blur(0.5rem);
 }
 
-.filter__sepia {
+.image_filter_sepia {
   filter: sepia(35%);
 }
 
-.filter__invert {
+.image_filter_invert {
   filter: invert(0.3);
 }
 
-.filter__brihtness {
+.image_filter_brihtness {
   filter: brightness(1.5);
 }
 
-.filter__hue-rotate {
+.image_filter_hue-rotate {
   filter: hue-rotate(45deg);
 }
 
-.multiplied__filter {
+.image_filter_multiplied {
   filter: contrast(175%) opacity(0.5) sepia(80%);
 }
 
-.card__text-block {
+.card__text {
   display: flex;
   flex-direction: column;
   gap: 27px;
@@ -293,7 +292,7 @@
   transform: translateX(100%);
 }
 
-.save-button-container {
+.save {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -301,35 +300,35 @@
   background-color: transparent;
 }
 
-.save-button {
+.save__button {
   gap: 8px;
-  inline-size: clamp(320px, 70%, 696px);
   block-size: 51px;
+  padding: 15px 20px;
 }
 
-.theme-light .save-button__image {
+.theme-light .save__button-image {
   color: var(--background-color);
   fill: var(--background-color);
   background-color: var(--accent-color);
 }
 
-.theme-light .save-button__image-modal {
+.theme-light .modal__content-image {
   color: var(--background-color);
   fill: var(--background-color);
   background-color: var(--accent-color);
 }
 
-.theme-dark .save-button__image-modal {
+.theme-dark .modal__content-image {
   color: var(--accent-color);
   background-color: var(--background-color);
 }
 
-.theme-dark .save-button__image {
+.theme-dark .save__button-image {
   color: var(--accent-color);
   background-color: var(--background-color);
 }
 
-.save-button__image {
+.save__button-image {
   position: relative;
   z-index: 2;
   fill: var(--accent-color);
@@ -358,7 +357,7 @@ dialog::backdrop {
   background-color: #000;
 }
 
-.save-modal-window {
+.modal {
   padding: 31.5px;
   outline: 2px solid var(--accent-color);
   color: var(--accent-color);
@@ -367,7 +366,7 @@ dialog::backdrop {
   inline-size: 357px;
 }
 
-.modal-container__content {
+.modal__content {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -375,7 +374,7 @@ dialog::backdrop {
   gap: 20px;
 }
 
-.save-button__image-modal {
+.modal__content-image {
   position: relative;
   z-index: 2;
   width: 39px;
@@ -385,7 +384,7 @@ dialog::backdrop {
   mix-blend-mode: difference;
 }
 
-.modal-container__content-text {
+.modal__content-text {
   color: var(--accent-color);
   font-family: var(--accent-font);
   font-weight: 400;
@@ -396,7 +395,7 @@ dialog::backdrop {
   max-inline-size: 234px;
 }
 
-.modal-container__button {
+.modal__content-button {
   z-index: 2;
   margin-top: 30px;
   padding: 9px 0;
@@ -408,7 +407,7 @@ dialog::backdrop {
   (text-stroke: 1px var(--background-color)) or
     (-webkit-text-stroke: 1px var(--background-color))
 ) {
-  .card__image-watermark {
+  .image_watermark {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--background-color);
     text-stroke: 1px var(--background-color);
@@ -449,12 +448,12 @@ dialog::backdrop {
     padding: 5px 10px;
   }
 
-  .card__image-watermark {
+  .image_watermark {
     inset-block-start: 23px;
     inset-inline-end: 11px;
   }
 
-  .card__text-block {
+  .card__text {
     padding: 24px 25px 0;
   }
 
@@ -462,7 +461,7 @@ dialog::backdrop {
     padding: 25px;
   }
 
-  .save-button {
+  .save__button {
     flex-direction: column;
     align-items: center;
     padding: 15px;
@@ -470,7 +469,7 @@ dialog::backdrop {
     block-size: 80px;
   }
 
-  .save-button__image {
+  .save__button-image {
     inline-size: 28px;
     block-size: 28px;
   }
