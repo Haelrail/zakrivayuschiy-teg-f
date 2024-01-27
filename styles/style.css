@@ -269,6 +269,7 @@
   transition: box-shadow 0.3s ease;
   cursor: pointer;
   color: var(--button-color);
+  appearance: none;
 }
 
 .button::before {
@@ -281,7 +282,6 @@
   transform: translateX(0);
   inline-size: 100%;
   block-size: 100%;
-  appearance: none;
 }
 
 .button:hover::before {
