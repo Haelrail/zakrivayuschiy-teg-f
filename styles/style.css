@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 102px;
+  margin-block-start: 102px;
   outline: 2px solid var(--accent-color);
   font-family: var(--accent-font);
   background-color: var(--background-color);
@@ -39,7 +39,7 @@
 }
 
 .header__logo {
-  margin-top: 136px;
+  margin-block-start: 136px;
   font-size: clamp(3.0625rem, 2.625rem + 1.5vw, 4.0625rem);
   font-style: normal;
   line-height: normal;
@@ -48,7 +48,7 @@
 }
 
 .header__title {
-  margin-top: 20px;
+  margin-block-start: 20px;
   font-size: clamp(0.875rem, 0.75rem + 0.8vw, 1.4375rem);
   font-style: normal;
   line-height: normal;
@@ -56,17 +56,16 @@
 }
 
 .theme-menu__list {
-  margin-top: 24px;
-  margin-bottom: 22px;
+  margin-block-start: 24px;
+  margin-block-end: 22px;
 }
 
 .theme-menu__item {
-  margin-left: 17px;
-  font-size: 14px;
+  margin-inline-start: 17px;
 }
 
 .theme-menu__item:not(:first-child) {
-  margin-top: 10px;
+  margin-block-start: 10px;
 }
 
 .theme-menu__button {
@@ -78,6 +77,7 @@
   transition: opacity 0.3s ease;
   cursor: pointer;
   appearance: none;
+  font-size: 14px;
 }
 
 .theme-menu__button::after {
@@ -98,8 +98,8 @@
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
-  width: 16px;
-  height: 13px;
+  inline-size: 16px;
+  block-size: 13px;
   animation: pointerMover 0.5s ease-in-out infinite alternate;
   inset-inline-start: -18px;
   inset-block-start: 0px;
@@ -107,8 +107,6 @@
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
-  cursor: pointer;
 }
 
 .theme-menu__button:focus {
@@ -145,8 +143,8 @@
 
 .card__illustration {
   position: relative;
-  border-top: 2px solid var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
+  border-block-start: 2px solid var(--accent-color);
+  border-block-end: 2px solid var(--accent-color);
 }
 
 .image_watermark {
@@ -214,7 +212,6 @@
   gap: 27px;
   padding: 27px 25px 0;
   font-family: var(--main-font);
-  font-weight: 400;
   font-size: var(--font-size);
   font-style: normal;
   line-height: 21px;
@@ -239,6 +236,7 @@
   background-color: transparent;
   transition: outline 0.3s ease;
   cursor: pointer;
+  appearance: none;
 }
 
 .card__icon-button:focus {
@@ -255,13 +253,9 @@
   block-size: 38px;
 }
 
-.card__like-button:focus {
-  outline: none;
-}
-
 .like-icon {
-  width: 39px;
-  height: 36px;
+  inline-size: 39px;
+  block-size: 36px;
 }
 
 .button {
@@ -274,29 +268,39 @@
   background-color: var(--background-color);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
+  color: var(--button-color);
 }
 
 .button::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: -100%;
+  inset-block-start: 0;
+  inset-inline-start: -100%;
   background-color: var(--accent-color);
   transition: transform 0.5s ease-in-out;
   transform: translateX(0);
   inline-size: 100%;
   block-size: 100%;
+  appearance: none;
 }
 
 .button:hover::before {
   transform: translateX(100%);
 }
 
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px var(--accent-color);
+}
+
 .save {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 105px;
+  margin-block-end: 105px;
   background-color: transparent;
 }
 
@@ -306,33 +310,9 @@
   padding: 15px 20px;
 }
 
-.theme-light .save__button-image {
-  color: var(--background-color);
-  fill: var(--background-color);
-  background-color: var(--accent-color);
-}
-
-.theme-light .modal__content-image {
-  color: var(--background-color);
-  fill: var(--background-color);
-  background-color: var(--accent-color);
-}
-
-.theme-dark .modal__content-image {
-  color: var(--accent-color);
-  background-color: var(--background-color);
-}
-
-.theme-dark .save__button-image {
-  color: var(--accent-color);
-  background-color: var(--background-color);
-}
-
 .save__button-image {
   position: relative;
   z-index: 2;
-  fill: var(--accent-color);
-  transition: color 0.5s ease-in-out;
   inline-size: 21px;
   block-size: 21px;
   mix-blend-mode: difference;
@@ -341,28 +321,27 @@
 .button__text {
   position: relative;
   z-index: 2;
-  color: var(--button-color);
   font-family: var(--accent-font);
   font-weight: 400;
   font-size: 14px;
   font-style: normal;
-  line-height: 90%;
-  background-color: var(--button-background);
+  line-height: 0.9;
   transition: color 0.5s ease-in-out;
   mix-blend-mode: difference;
 }
 
-dialog::backdrop {
+.modal::backdrop {
   opacity: 0.75;
   background-color: #000;
 }
 
 .modal {
   padding: 31.5px;
+  border: none;
   outline: 2px solid var(--accent-color);
-  color: var(--accent-color);
   text-transform: uppercase;
   background-color: var(--background-color);
+  color: var(--button-color);
   inline-size: 357px;
 }
 
@@ -377,10 +356,8 @@ dialog::backdrop {
 .modal__content-image {
   position: relative;
   z-index: 2;
-  width: 39px;
-  height: 39px;
-  fill: var(--accent-color);
-  transition: color 0.5s ease-in-out;
+  inline-size: 39px;
+  block-size: 39px;
   mix-blend-mode: difference;
 }
 
@@ -390,14 +367,14 @@ dialog::backdrop {
   font-weight: 400;
   font-size: 14px;
   font-style: normal;
-  line-height: 150%;
+  line-height: 1.5;
   text-transform: uppercase;
   max-inline-size: 234px;
 }
 
 .modal__content-button {
   z-index: 2;
-  margin-top: 30px;
+  margin-block-start: 30px;
   padding: 9px 0;
   text-transform: uppercase;
   inline-size: 100%;
@@ -420,16 +397,11 @@ dialog::backdrop {
   }
 
   .header__logo {
-    margin-top: 120px;
-    font-size: 49px;
-  }
-
-  .header__title {
-    font-size: 14px;
+    margin-block-start: 120px;
   }
 
   .theme-menu__item {
-    margin-left: 19px;
+    margin-inline-start: 19px;
   }
 
   .theme-menu__button:disabled::before {
